@@ -2,6 +2,7 @@ package get_requests;
 
 import baseUrls.HerOkuAppBaseUrl;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.*;
@@ -40,11 +41,10 @@ public class Get05 extends HerOkuAppBaseUrl {
 
         //4. Step: Do Assertion
         response.then().assertThat().statusCode(200);
-        assertTrue(response.asString().contains("bookingid"));
+     // assertTrue(response.asString().contains("bookingid"));
 
 
     }
-
 
 
 }
