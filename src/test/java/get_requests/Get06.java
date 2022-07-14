@@ -68,7 +68,7 @@ public class Get06 extends HerOkuAppBaseUrl {
         assertEquals("GGS", json.getString("firstname"));
         assertEquals("FINCH", json.getString("lastname"));
         assertEquals(111, json.getInt("totalprice"));
-        //assertEquals(true, json.getBoolean("depositpaid"));
+        assertEquals(true, json.getBoolean("depositpaid"));
         assertEquals("2018-01-01", json.getString("bookingdates.checkin"));
         assertEquals("2019-01-01",json.getString("bookingdates.checkout"));
 
