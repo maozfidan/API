@@ -18,4 +18,17 @@ public class GoRestBaseUrl {
     }
 
 
+    public static class DummyRestApiBaseUrl {
+
+        protected RequestSpecification spec;
+
+        @Before
+        public void setUp(){
+            spec=new RequestSpecBuilder().setBaseUri("https://dummy.restapiexample.com/api/v1").build();
+
+        }
+
+
+
+    }
 }
