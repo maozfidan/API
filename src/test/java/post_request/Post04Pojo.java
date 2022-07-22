@@ -1,4 +1,4 @@
-package post_requests;
+package post_request;
 
 import baseUrls.HerOkuAppBaseUrl;
 

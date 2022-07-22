@@ -19,7 +19,7 @@ public class Get16 extends DummyRestApiBaseUrl {
               URL: https://dummy.restapiexample.com/api/v1/employees
               HTTP Request Method: GET Request
               Test Case: Type by using Gherkin Language
-   ​
+
               Assert:  i) Status code is 200
                       ii) There are 24 employees
                      iii) "Tiger Nixon" and "Garrett Winters" are among the employees
