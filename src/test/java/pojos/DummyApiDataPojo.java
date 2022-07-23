@@ -4,84 +4,62 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DummyApiDataPojo {
-    private Integer id;
-    private String employeeName;
-    private Integer employeeSalary;
-    private Integer employeeAge;
-    private String profileImage;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
+    private String employee_name;
+    private Integer employee_salary;
+    private Integer employee_age;
+    private String profile_image;
+
+
     public DummyApiDataPojo() {
     }
 
-    /**
-     *
-     * @param employeeName
-     * @param employeeAge
-     * @param id
-     * @param profileImage
-     * @param employeeSalary
-     */
-    public DummyApiDataPojo(Integer id, String employeeName, Integer employeeSalary, Integer employeeAge, String profileImage) {
-        super();
-        this.id = id;
-        this.employeeName = employeeName;
-        this.employeeSalary = employeeSalary;
-        this.employeeAge = employeeAge;
-        this.profileImage = profileImage;
+    public DummyApiDataPojo(String employee_name, Integer employee_salary, Integer employee_age, String profile_image) {
+        this.employee_name = employee_name;
+        this.employee_salary = employee_salary;
+        this.employee_age = employee_age;
+        this.profile_image = profile_image;
     }
 
-    public Integer getId() {
-        return id;
+    public String getEmployee_name() {
+        return employee_name;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setEmployee_name(String employee_name) {
+        this.employee_name = employee_name;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public Integer getEmployee_salary() {
+        return employee_salary;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setEmployee_salary(Integer employee_salary) {
+        this.employee_salary = employee_salary;
     }
 
-    public Integer getEmployeeSalary() {
-        return employeeSalary;
+    public Integer getEmployee_age() {
+        return employee_age;
     }
 
-    public void setEmployeeSalary(Integer employeeSalary) {
-        this.employeeSalary = employeeSalary;
+    public void setEmployee_age(Integer employee_age) {
+        this.employee_age = employee_age;
     }
 
-    public Integer getEmployeeAge() {
-        return employeeAge;
+    public String getProfile_image() {
+        return profile_image;
     }
 
-    public void setEmployeeAge(Integer employeeAge) {
-        this.employeeAge = employeeAge;
-    }
-
-    public String getProfileImage() {
-        return profileImage;
-    }
-
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
+    public void setProfile_image(String profile_image) {
+        this.profile_image = profile_image;
     }
 
     @Override
     public String toString() {
-        return "Data{" +
-                "id=" + id +
-                ", employeeName='" + employeeName + '\'' +
-                ", employeeSalary=" + employeeSalary +
-                ", employeeAge=" + employeeAge +
-                ", profileImage='" + profileImage + '\'' +
+        return "DummyApiDataPojo{" +
+                "employee_name='" + employee_name + '\'' +
+                ", employee_salary=" + employee_salary +
+                ", employee_age=" + employee_age +
+                ", profile_image='" + profile_image + '\'' +
                 '}';
     }
 }
