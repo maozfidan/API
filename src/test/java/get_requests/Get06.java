@@ -65,6 +65,7 @@ public class Get06 extends HerOkuAppBaseUrl {
         //2. Yol: JsonPath Class kullanılır
 
         JsonPath json = response.jsonPath();
+
         assertEquals("GGS", json.getString("firstname"));
         assertEquals("FINCH", json.getString("lastname"));
         assertEquals(111, json.getInt("totalprice"));
@@ -78,9 +79,7 @@ public class Get06 extends HerOkuAppBaseUrl {
         //1) SoftAssert Objesi oluşturulur.
 
         SoftAssert softAssert = new SoftAssert();
-// arkadaşlarınızda çalışıyr mu burası   evet calisiyor bir tek bende hata veriyor olabilir Bu kısmı hocadan yada arkadaşınızdan alıp deneyebilir mi
 
-        //hocam zaten hocamizin kini bire bir kopyalayip yapistirdim
         //2) Obje aracılığı ile assert yapılır.
 
         softAssert.assertEquals(json.getString("firstname"), "GGS","firstname uyuşmadı");

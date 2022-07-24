@@ -14,25 +14,25 @@ import static org.junit.Assert.assertEquals;
 public class Get15ObjectMapper extends HerOkuAppBaseUrl {
 
 
-        /*
-            Given
-                    https://restful-booker.herokuapp.com/booking/22
-            When
-                     I send GET Request to the URL
-            Then
-                     Status code is 200
-               {
-                    "firstname": "Oliver",
-                    "lastname": "Smith",
-                    "totalprice": 100,
-                    "depositpaid": true,
-                    "bookingdates": {
-                        "checkin": "2022-07-18",
-                        "checkout": "2022-07-19"
-                    },
-                    "additionalneeds": "Breakfast"
-                }
-         */
+    /*
+        Given
+	            https://restful-booker.herokuapp.com/booking/22
+        When
+		 		I send GET Request to the URL
+		Then
+		 		Status code is 200
+           {
+                "firstname": "Oliver",
+                "lastname": "Smith",
+                "totalprice": 100,
+                "depositpaid": true,
+                "bookingdates": {
+                    "checkin": "2022-07-18",
+                    "checkout": "2022-07-19"
+                },
+                "additionalneeds": "Breakfast"
+            }
+     */
 
     @Test
     public void get01(){
@@ -52,11 +52,12 @@ public class Get15ObjectMapper extends HerOkuAppBaseUrl {
                 "                \"additionalneeds\": \"Breakfast\"\n" +
                 "            }";
 
+
         BookingPojo expectedDataPojo = JsonUtil.convertJsonToJavaObject(expectedData, BookingPojo.class);
 
         //3. Step: Send the Get Request get the Response
-        Response response = given().spec(spec).when().get("/{first}/{second}");
-        response.prettyPrint();
+       Response response = given().spec(spec).when().get("/{first}/{second}");
+       response.prettyPrint();
 
         //4. Step: Do Assertion
         BookingPojo actualDataPojo = JsonUtil.convertJsonToJavaObject(response.asString(), BookingPojo.class);
@@ -79,7 +80,7 @@ public class Get15ObjectMapper extends HerOkuAppBaseUrl {
         softAssert.assertEquals(actualDataPojo.getFirstname(), expectedDataPojo.getFirstname(),"Firstname uyuşmadı");
         softAssert.assertEquals(actualDataPojo.getLastname(), expectedDataPojo.getLastname(),"Lastname uyuşmadı");
         softAssert.assertEquals(actualDataPojo.getTotalprice(), expectedDataPojo.getTotalprice(),"Total Price uyuşmadı");
-      //  softAssert.assertEquals(actualDataPojo.isDepositpaid(), expectedDataPojo.isDepositpaid(),"Depositpaid uyuşmadı");
+        softAssert.assertEquals(actualDataPojo.isDepositpaid(), expectedDataPojo.isDepositpaid(),"Depositpaid uyuşmadı");
         softAssert.assertEquals(actualDataPojo.getBookingdates().getCheckin(), expectedDataPojo.getBookingdates().getCheckin(),"Checkin uyuşmadı");
         softAssert.assertEquals(actualDataPojo.getBookingdates().getCheckout(), expectedDataPojo.getBookingdates().getCheckout(),"Checkout uyuşmadı");
 

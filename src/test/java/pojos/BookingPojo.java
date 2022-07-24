@@ -3,9 +3,9 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-
 public class BookingPojo {
 
+    //1) Tüm keyler için private variable 'lar oluşturuyoruz.
     private String firstname;
     private String lastname;
     private Integer totalprice;
@@ -13,17 +13,24 @@ public class BookingPojo {
     private BookingDatesPojo bookingdates;
     private String additionalneeds;
 
-    public BookingPojo(String firstname, String lastname, Integer totalprice, Boolean depositpaid, BookingDatesPojo bookingdates, String additionalneeds) {
+
+    //2) Tüm parametrelerle ve parametresiz constructor'larımızı oluşturuyoruz.
+
+
+    public BookingPojo(String firstname, String lastname, Integer totalprice, Boolean depositpaid, BookingDatesPojo bookingdates, String additinalneeds) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.totalprice = totalprice;
         this.depositpaid = depositpaid;
         this.bookingdates = bookingdates;
-        this.additionalneeds = additionalneeds;
+        this.additionalneeds = additinalneeds;
     }
 
     public BookingPojo() {
+
     }
+    //3) Getters ve Setters'larımızı oluşturuyoruz.
+
 
     public String getFirstname() {
         return firstname;
@@ -49,7 +56,7 @@ public class BookingPojo {
         this.totalprice = totalprice;
     }
 
-    public Boolean getDepositpaid() {
+    public Boolean isDepositpaid() {
         return depositpaid;
     }
 
@@ -73,6 +80,9 @@ public class BookingPojo {
         this.additionalneeds = additionalneeds;
     }
 
+    //4) toString() methodumuzu oluşturuyoruz.
+
+
     @Override
     public String toString() {
         return "BookingPojo{" +
@@ -81,7 +91,7 @@ public class BookingPojo {
                 ", totalprice=" + totalprice +
                 ", depositpaid=" + depositpaid +
                 ", bookingdates=" + bookingdates +
-                ", additionalneeds='" + additionalneeds + '\'' +
+                ", additinalneeds='" + additionalneeds + '\'' +
                 '}';
     }
 }
